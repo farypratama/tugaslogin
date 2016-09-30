@@ -1,6 +1,7 @@
 package id.ac.uinsgd.tugaslogin;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,7 +28,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if((username.getText().toString().equals("admin"))&&(password.getText().toString().equals("admin")))
                 {
-                    startActivity(new Intent(LoginActivity.this,IsiActivity.class));
+                    Intent intent=new Intent(LoginActivity.this,IsiActivity.class);
+                    intent.setData(Uri.parse("1"));
+                    startActivity(intent);
                 }
                 else
                 {
@@ -48,15 +51,21 @@ public class LoginActivity extends AppCompatActivity {
 
     public void LoginFacebook(View view)
     {
-
+        Intent intent=new Intent(LoginActivity.this,IsiActivity.class);
+        intent.setData(Uri.parse("http://m.facebook.com"));
+        startActivity(intent);
     }
     public void LoginGoogle(View view)
     {
-
+        Intent intent=new Intent(LoginActivity.this,IsiActivity.class);
+        intent.setData(Uri.parse("http://www.google.com"));
+        startActivity(intent);
     }
     public void LoginTwitter(View view)
     {
-
+        Intent intent=new Intent(LoginActivity.this,IsiActivity.class);
+        intent.setData(Uri.parse("http://twitter.com"));
+        startActivity(intent);
     }
 
 }
